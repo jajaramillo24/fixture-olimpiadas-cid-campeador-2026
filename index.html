@@ -44,13 +44,15 @@ header{
   overflow:hidden;
 }
 .badge{
-  width:92px;height:104px;margin:0 auto 22px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,#8FB9AA,#6E9E8D);
-  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
-  color:var(--pine-deep);
+  width:min(240px,58vw);
+  margin:0 auto 22px;
+  display:block;
 }
-.badge svg{width:56px;height:56px}
+.badge img{
+  display:block;
+  width:100%;
+  height:auto;
+}
 .eyebrow{
   font-family:"Archivo",sans-serif;font-stretch:85%;
   letter-spacing:.32em;text-transform:uppercase;
@@ -189,13 +191,9 @@ footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
 <body>
 
 <header>
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32 4v26" stroke="#C79A2E" stroke-width="4" stroke-linecap="round"/>
-      <path d="M24 10h16M28 4h8" stroke="#C79A2E" stroke-width="3" stroke-linecap="round"/>
-      <path d="M8 48l14-18 8 10 6-8 20 16H8z" fill="#0E3527"/>
-    </svg>
-  </div>
+  <figure class="badge">
+    <img src="assets/logo-olimpiadas-cid-campeador.png" alt="Olimpiadas Cid Campeador 10 años">
+  </figure>
   <p class="eyebrow">Olimpiadas Cid Campeador · 10 años</p>
   <h1 class="display">Fútbol</h1>
   <p class="subtitle">Fixture completo · Grupos y copas</p>
