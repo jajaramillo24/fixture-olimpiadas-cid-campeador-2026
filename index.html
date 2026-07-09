@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fútbol · Fixture — Olimpiadas Cid Campeador 2026</title>
+<meta name="description" content="Todos los partidos de fútbol de las Olimpiadas Cid Campeador 2026: fase de grupos, Copa Oro y Copa Plata.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#0E3527;        /* fondo principal */
+  --pine-deep:#0A2A1F;   /* fondo tarjetas oscuras */
+  --pine-soft:#16442F;   /* tarjetas / filas */
+  --mint:#A9CEC2;        /* texto secundario / slab */
+  --mint-strong:#CDE7DD;
+  --gold-1:#F3DFA0;
+  --gold-2:#D9A93F;
+  --gold-3:#B07E1E;
+  --line:rgba(169,206,194,.18);
+  --ink:#EAF4EF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--pine);
+  color:var(--ink);
+  font-family:"Zilla Slab",Georgia,serif;
+  font-size:17px;
+  line-height:1.5;
+  background-image:
+    radial-gradient(1200px 600px at 50% -200px, rgba(169,206,194,.07), transparent 70%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.012) 0 2px, transparent 2px 9px);
+}
+.display{font-family:"Archivo",system-ui,sans-serif;font-stretch:80%;text-transform:uppercase}
+
+/* ---------- HERO ---------- */
+header{
+  text-align:center;
+  padding:64px 20px 44px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.badge{
+  width:92px;height:104px;margin:0 auto 22px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#8FB9AA,#6E9E8D);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  color:var(--pine-deep);
+}
+.badge svg{width:56px;height:56px}
+.eyebrow{
+  font-family:"Archivo",sans-serif;font-stretch:85%;
+  letter-spacing:.32em;text-transform:uppercase;
+  font-size:.72rem;color:var(--mint);
+}
+h1{
+  margin:10px 0 6px;
+  font-size:clamp(3rem,9vw,5.6rem);
+  font-weight:900;line-height:.92;
+  background:linear-gradient(100deg,var(--gold-1) 10%,var(--gold-2) 45%,var(--gold-3) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.subtitle{
+  font-family:"Zilla Slab",serif;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mint);font-size:clamp(1rem,3vw,1.5rem);
+}
+.hero-meta{
+  margin-top:26px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;
+  font-size:.85rem;color:var(--mint);
+}
+.hero-meta strong{color:var(--gold-1);font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:700;letter-spacing:.06em}
+
+/* ---------- NAV / FILTRO ---------- */
+.toolbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(10,42,31,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:12px 20px;
+}
+.toolbar-inner{max-width:1080px;margin:0 auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.toolbar label{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);font-family:"Archivo",sans-serif;font-stretch:85%}
+select{
+  background:var(--pine-soft);color:var(--ink);
+  border:1px solid var(--line);border-radius:6px;
+  padding:8px 12px;font-family:"Zilla Slab",serif;font-size:.95rem;
+}
+select:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.jump a{
+  color:var(--mint);text-decoration:none;font-size:.78rem;
+  font-family:"Archivo",sans-serif;font-stretch:85%;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 12px;border:1px solid var(--line);border-radius:999px;
+}
+.jump a:hover,.jump a:focus-visible{color:var(--gold-1);border-color:var(--gold-2);outline:none}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:1080px;margin:0 auto;padding:48px 20px 90px}
+section{margin-bottom:72px}
+.section-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--gold-2);padding-bottom:10px;margin-bottom:28px}
+.section-head h2{
+  font-family:"Archivo",sans-serif;font-stretch:80%;font-weight:900;
+  text-transform:uppercase;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold-1);
+}
+.section-head .when{margin-left:auto;color:var(--mint);font-size:.85rem;letter-spacing:.08em}
+
+/* ---------- GRUPOS ---------- */
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:34px}
+.group-card{background:var(--pine-soft);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.group-card h3{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  font-size:.8rem;letter-spacing:.24em;color:var(--gold-2);margin-bottom:8px;
+}
+.group-card li{list-style:none;padding:3px 0;color:var(--mint-strong);font-size:.95rem;border-top:1px dashed var(--line)}
+.group-card li:first-of-type{border-top:none}
+
+/* ---------- FECHAS Y PARTIDOS ---------- */
+.fecha-block{margin-bottom:34px}
+.fecha-block h3{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.95rem;color:var(--mint);
+  display:flex;align-items:center;gap:12px;margin-bottom:14px;
+}
+.fecha-block h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.matches{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.match{
+  display:grid;grid-template-columns:auto 1fr;gap:0;
+  background:var(--pine-deep);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  transition:border-color .15s;
+}
+.match:hover{border-color:var(--gold-3)}
+.cancha{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 12px;min-width:66px;
+  background:linear-gradient(180deg,rgba(217,169,63,.16),rgba(217,169,63,.05));
+  border-right:1px solid var(--line);
+}
+.cancha .n{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.5rem;color:var(--gold-1);line-height:1}
+.cancha .lbl{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin-top:3px;font-family:"Archivo",sans-serif;font-stretch:85%}
+.teams{padding:10px 16px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.teams .t{font-weight:600;font-size:1.02rem;color:var(--ink)}
+.teams .vs{font-family:"Archivo",sans-serif;font-stretch:85%;font-size:.65rem;letter-spacing:.3em;color:var(--gold-2);text-transform:uppercase}
+.match .grp-tag{grid-column:1/-1;border-top:1px dashed var(--line);padding:5px 16px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mint);font-family:"Archivo",sans-serif;font-stretch:85%}
+.match.dim{opacity:.18;filter:grayscale(.6)}
+.match.hit{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2)}
+
+/* ---------- LLAVES ---------- */
+.copa{margin-top:46px}
+.copa-title{
+  display:inline-block;font-family:"Archivo",sans-serif;font-stretch:80%;font-weight:900;
+  text-transform:uppercase;font-size:1.35rem;letter-spacing:.06em;
+  padding:8px 20px;border-radius:6px;margin-bottom:6px;
+}
+.copa-oro .copa-title{background:linear-gradient(100deg,var(--gold-1),var(--gold-2));color:var(--pine-deep)}
+.copa-plata .copa-title{background:linear-gradient(100deg,#DDE7E3,#9FB6AE);color:var(--pine-deep)}
+.copa .note{color:var(--mint);font-size:.9rem;margin-bottom:18px}
+.bracket-row{margin-bottom:22px}
+.bracket-row h4{
+  font-family:"Archivo",sans-serif;font-stretch:85%;font-weight:800;text-transform:uppercase;
+  letter-spacing:.2em;font-size:.8rem;color:var(--mint);margin-bottom:10px;
+}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.slot{
+  background:var(--pine-soft);border:1px dashed rgba(217,169,63,.4);border-radius:8px;
+  padding:10px 14px;display:flex;align-items:center;gap:12px;
+}
+.copa-plata .slot{border-color:rgba(169,206,194,.4)}
+.slot .cn{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.2rem;color:var(--gold-1)}
+.copa-plata .slot .cn{color:var(--mint-strong)}
+.slot .who{font-size:.9rem;color:var(--mint-strong)}
+.slot .who em{display:block;font-style:normal;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);opacity:.8}
+
+footer{border-top:1px solid var(--line);text-align:center;padding:34px 20px;color:var(--mint);font-size:.85rem}
+footer .display{color:var(--gold-2);letter-spacing:.24em;font-size:.75rem}
+
+@media (max-width:520px){
+  .matches{grid-template-columns:1fr}
+  .hero-meta{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .match{transition:border-color .15s, transform .15s}
+  .match:hover{transform:translateY(-2px)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 4v26" stroke="#C79A2E" stroke-width="4" stroke-linecap="round"/>
+      <path d="M24 10h16M28 4h8" stroke="#C79A2E" stroke-width="3" stroke-linecap="round"/>
+      <path d="M8 48l14-18 8 10 6-8 20 16H8z" fill="#0E3527"/>
+    </svg>
+  </div>
+  <p class="eyebrow">Olimpiadas Cid Campeador · 10 años</p>
+  <h1 class="display">Fútbol</h1>
+  <p class="subtitle">Fixture completo · Grupos y copas</p>
+  <div class="hero-meta">
+    <span><strong>20</strong> equipos</span>
+    <span><strong>5</strong> grupos</span>
+    <span><strong>6</strong> canchas</span>
+    <span><strong>30</strong> partidos de grupos</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <label for="teamFilter">Ver equipo</label>
+    <select id="teamFilter">
+      <option value="">Todos los equipos</option>
+    </select>
+    <nav class="jump" aria-label="Secciones">
+      <a href="#grupos">Grupos</a>
+      <a href="#fase-grupos">Fase de grupos</a>
+      <a href="#copa-oro">Copa Oro</a>
+      <a href="#copa-plata">Copa Plata</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section id="grupos">
+  <div class="section-head">
+    <h2>Grupos</h2>
+    <span class="when">Clasifican: 5 primeros a Copa Oro · segundos y terceros definen Copa Plata</span>
+  </div>
+  <div class="groups" id="groupsGrid"></div>
+</section>
+
+<section id="fase-grupos">
+  <div class="section-head">
+    <h2>Fase de grupos</h2>
+    <span class="when">16:00 a 18:10 hs</span>
+  </div>
+  <div id="fechas"></div>
+</section>
+
+<section id="copa-oro" class="copa copa-oro">
+  <span class="copa-title">Copa Oro</span>
+  <p class="note">Desde las 18:10 hs · primera fase 1 h, segunda fase 1 h. Cruces según posiciones finales de grupos.</p>
+
+  <div class="bracket-row">
+    <h4>Cuartos de final</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">1</span><span class="who"><em>Llave A</em>1er primero vs a definir</span></div>
+      <div class="slot"><span class="cn">2</span><span class="who"><em>Llave D</em>2do primero vs a definir</span></div>
+      <div class="slot"><span class="cn">3</span><span class="who"><em>Llave B</em>3er primero vs a definir</span></div>
+      <div class="slot"><span class="cn">4</span><span class="who"><em>Llave C</em>4to primero vs a definir</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Semifinales</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">1</span><span class="who">Ganador A vs Ganador B</span></div>
+      <div class="slot"><span class="cn">2</span><span class="who">Ganador C vs Ganador D</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Final y 3er puesto</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">1</span><span class="who"><em>Final</em>Ganadores de semifinales</span></div>
+      <div class="slot"><span class="cn">2</span><span class="who"><em>3er puesto</em>Perdedores de semifinales</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="copa-plata" class="copa copa-plata">
+  <span class="copa-title">Copa Plata</span>
+  <p class="note">Desde las 18:10 hs · primera fase 1 h, segunda fase 1 h. Arranca con playoff de cuartos.</p>
+
+  <div class="bracket-row">
+    <h4>Playoff de cuartos</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">5</span><span class="who"><em>Llave A</em>4to segundo vs a definir</span></div>
+      <div class="slot"><span class="cn">6</span><span class="who"><em>Llave B</em>2do tercero vs a definir</span></div>
+      <div class="slot"><span class="cn">3</span><span class="who"><em>Llave C</em>1er tercero vs a definir</span></div>
+      <div class="slot"><span class="cn">4</span><span class="who"><em>Llave D</em>5to segundo vs a definir</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Cuartos de final</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">3</span><span class="who">Cruce 1</span></div>
+      <div class="slot"><span class="cn">4</span><span class="who">Cruce 2</span></div>
+      <div class="slot"><span class="cn">5</span><span class="who">Cruce 3</span></div>
+      <div class="slot"><span class="cn">6</span><span class="who">Cruce 4</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Semifinales</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">3</span><span class="who">Semifinal 1</span></div>
+      <div class="slot"><span class="cn">4</span><span class="who">Semifinal 2</span></div>
+    </div>
+  </div>
+  <div class="bracket-row">
+    <h4>Final y 3er puesto</h4>
+    <div class="slots">
+      <div class="slot"><span class="cn">3</span><span class="who"><em>Final</em>Ganadores de semifinales</span></div>
+      <div class="slot"><span class="cn">4</span><span class="who"><em>3er puesto</em>Perdedores de semifinales</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="display">Olimpiadas Cid Campeador · 2026</p>
+  <p>Fixture de fútbol · El número indica la cancha de cada partido.</p>
+</footer>
+
+<script>
+const GRUPOS = {
+  "Grupo A": ["CARAHUE A","CHAMPAQUI A","CURA B","CHAPELCO C"],
+  "Grupo B": ["CHAPELCO A","LIHUE A","CARAHUE B","LAETARE B"],
+  "Grupo C": ["MAVUL A","ROSARIO A","CHAPELCO B","CHOROY B"],
+  "Grupo D": ["CURA A","LAETARE A","MAVUL B","CHAPELCO D"],
+  "Grupo E": ["CHOROY A","LLAHUE A","AMULEN A","CARAHUE C"]
+};
+
+/* [fecha, grupo, cancha, equipo1, equipo2] */
+const PARTIDOS = [
+  [1,"A",1,"CARAHUE A","CHAMPAQUI A"],
+  [1,"A",6,"CURA B","CHAPELCO C"],
+  [1,"B",2,"CHAPELCO A","CARAHUE B"],
+  [1,"B",1,"LIHUE A","LAETARE B"],
+  [1,"C",3,"MAVUL A","ROSARIO A"],
+  [1,"C",2,"CHAPELCO B","CHOROY B"],
+  [1,"D",4,"CURA A","CHAPELCO D"],
+  [1,"D",3,"MAVUL B","LAETARE A"],
+  [1,"E",5,"AMULEN A","CARAHUE C"],
+  [1,"E",4,"CHOROY A","LLAHUE A"],
+
+  [2,"A",5,"CHAPELCO C","CARAHUE A"],
+  [2,"A",4,"CHAMPAQUI A","CURA B"],
+  [2,"B",6,"LAETARE B","CHAPELCO A"],
+  [2,"B",5,"CARAHUE B","LIHUE A"],
+  [2,"C",1,"CHOROY B","MAVUL A"],
+  [2,"C",6,"ROSARIO A","CHAPELCO B"],
+  [2,"D",2,"LAETARE A","CURA A"],
+  [2,"D",1,"CHAPELCO D","MAVUL B"],
+  [2,"E",3,"AMULEN A","LLAHUE A"],
+  [2,"E",2,"CARAHUE C","CHOROY A"],
+
+  [3,"A",3,"CARAHUE A","CURA B"],
+  [3,"A",2,"CHAMPAQUI A","CHAPELCO C"],
+  [3,"B",4,"LIHUE A","CHAPELCO A"],
+  [3,"B",3,"LAETARE B","CARAHUE B"],
+  [3,"C",5,"MAVUL A","CHAPELCO B"],
+  [3,"C",4,"ROSARIO A","CHOROY B"],
+  [3,"D",6,"CURA A","MAVUL B"],
+  [3,"D",5,"LAETARE A","CHAPELCO D"],
+  [3,"E",1,"CHOROY A","AMULEN A"],
+  [3,"E",6,"LLAHUE A","CARAHUE C"]
+];
+
+/* Grupos */
+const groupsGrid = document.getElementById('groupsGrid');
+for (const [g, teams] of Object.entries(GRUPOS)) {
+  const card = document.createElement('div');
+  card.className = 'group-card';
+  card.innerHTML = `<h3>${g}</h3><ul>${teams.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+  groupsGrid.appendChild(card);
+}
+
+/* Fechas */
+const fechasEl = document.getElementById('fechas');
+for (const f of [1,2,3]) {
+  const block = document.createElement('div');
+  block.className = 'fecha-block';
+  const matches = PARTIDOS.filter(p=>p[0]===f).sort((a,b)=>a[2]-b[2]);
+  block.innerHTML = `<h3>Fecha ${f}</h3>
+    <div class="matches">
+      ${matches.map(([,g,c,t1,t2])=>`
+        <div class="match" data-teams="${t1}|${t2}">
+          <div class="cancha"><span class="n">${c}</span><span class="lbl">Cancha</span></div>
+          <div class="teams">
+            <span class="t">${t1}</span>
+            <span class="vs">vs</span>
+            <span class="t">${t2}</span>
+          </div>
+          <div class="grp-tag">Grupo ${g}</div>
+        </div>`).join('')}
+    </div>`;
+  fechasEl.appendChild(block);
+}
+
+/* Filtro por equipo */
+const select = document.getElementById('teamFilter');
+[...new Set(PARTIDOS.flatMap(p=>[p[3],p[4]]))].sort().forEach(t=>{
+  const o = document.createElement('option');
+  o.value = t; o.textContent = t;
+  select.appendChild(o);
+});
+select.addEventListener('change', ()=>{
+  const t = select.value;
+  document.querySelectorAll('.match').forEach(m=>{
+    const teams = m.dataset.teams.split('|');
+    m.classList.remove('dim','hit');
+    if (t) m.classList.add(teams.includes(t) ? 'hit' : 'dim');
+  });
+});
+</script>
+</body>
+</html>
